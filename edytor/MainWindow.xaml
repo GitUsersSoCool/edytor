@@ -1,0 +1,74 @@
+﻿<Window x:Class="edytor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:edytor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Komórki z kolorami do wyboru -->
+            <Border Grid.Column="0" Background="Red" Width="30" Height="30" MouseLeftButtonDown="ColorCell_Click" Tag="Red" Margin="5"/>
+            <Border Grid.Column="1" Background="Green" Width="30" Height="30" MouseLeftButtonDown="ColorCell_Click" Tag="Green" Margin="5"/>
+            <Border Grid.Column="2" Background="Blue" Width="30" Height="30" MouseLeftButtonDown="ColorCell_Click" Tag="Blue" Margin="5"/>
+            <Border Grid.Column="3" Background="Yellow" Width="30" Height="30" MouseLeftButtonDown="ColorCell_Click" Tag="Yellow" Margin="5"/>
+            <Border Grid.Column="4" Background="Cyan" Width="30" Height="30" MouseLeftButtonDown="ColorCell_Click" Tag="Cyan" Margin="5"/>
+            <Border Grid.Column="5" Background="Magenta" Width="30" Height="30" MouseLeftButtonDown="ColorCell_Click" Tag="Magenta" Margin="5"/>
+        </Grid>
+
+        <Grid Grid.Row="1" x:Name="ColorGrid" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Tworzenie komórek gridu 3x6 -->
+            <!-- Każda komórka to Border, który obsługuje kliknięcia -->
+            <Border Background="GhostWhite" Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="0" Grid.Column="4" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="0" Grid.Column="5" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="1" Grid.Column="4" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="1" Grid.Column="5" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+            <Border Background="GhostWhite" Grid.Row="2" Grid.Column="5" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="GridCell_Click"/>
+        </Grid>
+
+        <Button Grid.Row="2" Content="Sortuj Kolory" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SortButton_Click"/>
+    </Grid>
+</Window>
